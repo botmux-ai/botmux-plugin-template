@@ -1,5 +1,5 @@
 {
-  "name": "@botmux/plugin-template",
+  "name": "@botmux-ai/plugin-template",
   "version": "0.1.0",
   "description": "Template repository for building a botmux plugin.",
   "type": "module",

@@ -69,6 +69,10 @@ When using this repository as a new plugin:
 botmux does not add a namespace for you. Use plugin-specific names for commands,
 skills, MCP servers, and services.
 
+Official botmux plugins use the npm package name `@botmux-ai/plugin-<id>` and
+the repository name `botmux-plugin-<id>`. The runtime `botmux.id` stays as the
+short id, for example `agent-chrome`.
+
 ## Why Commands Are Generated
 
 The CLI command index exists because `botmux plugin install` validates and scans
