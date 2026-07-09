@@ -13,7 +13,7 @@ directories without executing plugin code during install:
 | --- | --- | --- |
 | `skills/*/SKILL.md` | Skills materialized on `botmux plugin enable` | hand-written |
 | `mcp/*.json` | Static MCP servers materialized on `botmux plugin enable` | hand-written |
-| `cli/index.js` | CLI handler map used by `botmux plugin run` | `src/cli/index.js` |
+| `cli/index.js` | CLI handler map used by top-level `botmux <command>` | `src/cli/index.js` |
 | `cli/commands.json` | Generated command index for install-time scanning | generated from `src/cli/index.js` |
 | `dashboard/index.js` | Dashboard React component entry | `src/dashboard/index.js` |
 | `service/index.js` | PM2 service definition | `src/service/index.js` |
@@ -46,7 +46,7 @@ Install the local plugin into botmux:
 ```bash
 botmux plugin install . --link
 botmux plugin enable template-plugin
-botmux plugin run template:hello --plugin template-plugin
+botmux template:hello
 botmux plugin service start template-plugin
 botmux plugin service status
 ```
@@ -105,4 +105,3 @@ host instead of `127.0.0.1`.
 
 Use this repository to start a real plugin. Use `botmux-plugin-demo` for
 conformance and E2E coverage of the plugin system itself.
-
