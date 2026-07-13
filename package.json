@@ -1,36 +1,14 @@
 {
   "name": "@botmux-ai/plugin-template",
   "version": "0.1.0",
-  "description": "Template repository for building a botmux plugin.",
+  "description": "Official generation template consumed by botmux plugin init.",
   "type": "module",
-  "keywords": [
-    "botmux-plugin"
-  ],
   "scripts": {
-    "build": "node ./scripts/build.mjs",
-    "validate": "node ./scripts/validate.mjs",
-    "test": "npm run build && npm run validate"
-  },
-  "peerDependencies": {
-    "botmux": ">=0.0.0"
-  },
-  "botmux": {
-    "schemaVersion": 1,
-    "id": "template-plugin",
-    "displayName": "Template Plugin",
-    "service": {
-      "mode": "manual"
-    }
+    "test": "node ./scripts/validate-template.mjs"
   },
   "files": [
-    "package.json",
-    "README.md",
-    "cli/",
-    "dashboard/",
-    "mcp/",
-    "service/",
-    "skills/",
-    "worker/"
+    "template.json",
+    "template/"
   ],
   "license": "MIT"
 }

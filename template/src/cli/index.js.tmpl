@@ -1,6 +1,6 @@
 export default {
-  'template:hello': {
-    description: 'Print a hello response from the template plugin.',
+  '{{commandPrefix}}hello': {
+    description: 'Print a hello response from {{displayName}}.',
     run(ctx) {
       return JSON.stringify({
         ok: true,
@@ -10,16 +10,16 @@ export default {
     },
   },
 
-  'template:set-config': {
+  '{{commandPrefix}}set-config': {
     description: 'Write a demo value into the plugin config file.',
     run(ctx) {
       const value = ctx.args[0] ?? 'configured';
       ctx.api.config.set('demo.value', value);
-      return `template plugin config demo.value=${value}`;
+      return `{{displayName}} config demo.value=${value}`;
     },
   },
 
-  'template:show-config': {
+  '{{commandPrefix}}show-config': {
     description: 'Read values from the plugin config file.',
     run(ctx) {
       return JSON.stringify(ctx.api.config.get() ?? {});

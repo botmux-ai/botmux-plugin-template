@@ -1,2 +1,0 @@
-process.stdin.resume();
-

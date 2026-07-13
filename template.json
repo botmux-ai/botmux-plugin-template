@@ -1,0 +1,29 @@
+{
+  "package": {
+    "version": "0.1.0",
+    "description": "Botmux plugin: {{displayName}}.",
+    "type": "module",
+    "keywords": [
+      "botmux-plugin"
+    ],
+    "scripts": {
+      "build": "node ./scripts/build.mjs",
+      "validate": "node ./scripts/validate.mjs",
+      "test": "npm run build && npm run validate",
+      "prepublishOnly": "npm test"
+    },
+    "devDependencies": {
+      "esbuild": "^0.28.0"
+    },
+    "botmux": {
+      "schemaVersion": 1,
+      "service": {
+        "mode": "manual"
+      }
+    },
+    "files": [
+      "dist/"
+    ],
+    "license": "MIT"
+  }
+}
