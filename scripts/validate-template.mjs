@@ -66,6 +66,10 @@ function visit(dir) {
 }
 
 if (!existsSync(join(root, 'template.json'))) fail('template.json is missing');
+const rootPackage = JSON.parse(readFileSync(join(root, 'package.json'), 'utf-8'));
+if (rootPackage.publishConfig?.registry !== 'https://registry.npmjs.org/' || rootPackage.publishConfig?.access !== 'public') {
+  fail('template package must publish publicly to npmjs');
+}
 const definition = JSON.parse(readFileSync(join(root, 'template.json'), 'utf-8'));
 if (!definition?.package || typeof definition.package !== 'object' || Array.isArray(definition.package)) {
   fail('template.json#package is required');
@@ -73,6 +77,10 @@ if (!definition?.package || typeof definition.package !== 'object' || Array.isAr
 validateTemplateValue(definition.package, 'template.package');
 if (definition.package.files?.length !== 1 || definition.package.files[0] !== 'dist/') {
   fail('generated package must publish only dist/');
+}
+if (definition.package.publishConfig?.registry !== 'https://registry.npmjs.org/'
+  || definition.package.publishConfig?.access !== 'public') {
+  fail('generated package must publish publicly to npmjs');
 }
 if (!definition.package.devDependencies?.esbuild) fail('generated package must include esbuild');
 if (!existsSync(templateDir)) fail('template/ is missing');
