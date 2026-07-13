@@ -3,6 +3,14 @@
   "version": "0.1.0",
   "description": "Official generation template consumed by botmux plugin init.",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/botmux-ai/botmux-plugin-template.git"
+  },
+  "homepage": "https://github.com/botmux-ai/botmux-plugin-template#readme",
+  "bugs": {
+    "url": "https://github.com/botmux-ai/botmux-plugin-template/issues"
+  },
   "scripts": {
     "test": "node ./scripts/validate-template.mjs"
   },

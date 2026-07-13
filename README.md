@@ -2,6 +2,13 @@
 
 Official data-only project template consumed by `botmux plugin init`.
 
+Source: https://github.com/botmux-ai/botmux-plugin-template
+
+Botmux downloads the published `@botmux-ai/plugin-template` package from npm
+into a temporary directory, renders the generated project, and then removes
+the temporary package. The template package is not installed into the
+generated plugin repository.
+
 ```bash
 botmux plugin init agent-chrome
 ```
